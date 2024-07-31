@@ -1,0 +1,39 @@
+import pandas as pd
+
+# Datos para Texto a Voz (TTS)
+data_tts = {
+    'Texto': [
+        'Hola, ¿cómo estás?',
+        'El clima está soleado hoy.',
+        'Me encanta programar en Python.'
+    ],
+    'Archivo de Audio': [
+        'hola_como_estas.wav',
+        'clima_soleado.wav',
+        'programar_python.wav'
+    ]
+}
+
+# Datos para Voz a Texto (STT)
+data_stt = {
+    'Archivo de Audio': [
+        'recording_1.wav',
+        'recording_2.wav',
+        'recording_3.wav'
+    ],
+    'Transcripción': [
+        'Esto es una prueba de grabación.',
+        'El sol brilla en el cielo.',
+        'Aprender Python es divertido.'
+    ]
+}
+
+# Crear DataFrames
+df_tts = pd.DataFrame(data_tts)
+df_stt = pd.DataFrame(data_stt)
+
+# Guardar DataFrames como archivos CSV
+df_tts.to_csv('dataset_tts.csv', index=False)
+df_stt.to_csv('dataset_stt.csv', index=False)
+
+print("Archivos CSV generados exitosamente.")
